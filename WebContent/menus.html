@@ -1,0 +1,63 @@
+
+
+<style>
+.nav-link{ 
+   
+    margin-right: 10px;
+    
+    margin-left: 35px;
+}
+</style>
+ 
+ 
+<nav ng-controller="produtoCtrl" lang="pt-br" class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+	<meta charset="utf-8">
+      <a class="navbar-brand" href="index.html">Data Store</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+   
+	
+
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Rank</a>
+          </li>
+          <li class="nav-item dropdown" >
+            <a class="nav-link dropdown-toggle" href="#"   id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01" >
+              <a class="dropdown-item"  href="#">Telefonia</a>
+             <a class="dropdown-item"  href="#">Informática</a>
+             <a class="dropdown-item"  href="#">Tv e Acessórios</a>
+             <a class="dropdown-item"  href="#">Eletrodomésticos</a>
+             <a class="dropdown-item"  href="#">Móveis</a>
+             <a class="dropdown-item"  href="#">Eletroportáteis</a>
+             <a class="dropdown-item"  href="#">Outros</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar" ng-model="criterioDeBusca" aria-label="Search"> </input>
+          <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Pesquisar</button>
+        </form>
+        
+        <li class="nav-item dropdown" ng-show="cliente != undefined" >
+            <a class="nav-link dropdown-toggle" href="#" id="opcoes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Perfil</a>
+              <a class="dropdown-item" href="adicionaProduto.html">Adicionar Produtos</a>
+              <a class="dropdown-item" href="#">Meus Produtos</a>
+              <a class="dropdown-item" ng-click="removeCliente(cliente)" href="index.html">Sair</a>
+            </div>
+          </li>
+    </div>
+    
+</nav>

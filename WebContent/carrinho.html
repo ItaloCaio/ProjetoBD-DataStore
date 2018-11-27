@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" ng-app="appHotel">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="fav/favicon.ico">
+
+  <title>Data Store</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/offcanvas.css" rel="stylesheet">
+      <script type="text/javascript" src="js/angular.min.js"></script>
+
+</head>
+
+<body ng-controller="carrinhoCtrl">
+
+
+  <nav ng-controller="produtoCtrl" lang="pt-br" class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+	<meta charset="utf-8">
+      <a class="navbar-brand" href="index.html">Data Store</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+   
+	
+
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sobre.html">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="rank.html">Rank</a>
+          </li>
+         
+          <li class="nav-item dropdown" >
+            <a class="nav-link dropdown-toggle" href="#"   id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
+            <div class="dropdown-menu" ng-model="dropFilter" aria-labelledby="dropdown01" >
+              <a class="dropdown-item"  href="categoriaTelefonia.html">Telefonia</a>
+             <a class="dropdown-item"  href="categoriaInformatica.html">Informática</a>
+             <a class="dropdown-item"  href="categoriaTv.html">Tv e Acessórios</a>
+             <a class="dropdown-item"  href="categoriaEletrodomesticos.html">Eletrodomésticos</a>
+             <a class="dropdown-item"  href="categoriaMoveis.html">Móveis</a>
+             <a class="dropdown-item"  href="categoriaEletroportateis.html">Eletroportáteis</a>
+             <a class="dropdown-item"  href="categoriaOutros.html">Outros</a>
+             
+            </div>
+           
+          </li>
+          
+       
+       
+   
+        
+        <li class="nav-item dropdown" ng-show="cliente != undefined" >
+            <a class="nav-link dropdown-toggle" href="#" id="opcoes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="profile.html">Perfil</a>
+              <a class="dropdown-item" href="adicionaProduto.html">Adicionar Produtos</a>
+              <a class="dropdown-item" href="meusProdutos.html">Meus Produtos</a>
+              <a class="dropdown-item" ng-click="removeCliente()" href="index.html">Sair</a>
+            </div>
+          </li>
+    </div>
+    
+</nav>
+  <main role="main" class="container">
+
+    <div class="row row-offcanvas row-offcanvas-right">
+
+      <div class="col-12 col-md-9">
+        <p class="float-right d-md-none">
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
+        </p>
+        
+        
+        <h1 align="center">Carrinho</h1>
+
+
+
+     <table class="table table-striped">
+      <tr>
+      
+        <th>Nome</th>
+        <th>Quantidade</th>
+        <th>Valor</th>
+      </tr>
+      <tr  ng-repeat="produto in produtos">
+        <td>{{ produto.nome}}</td>
+        <td>{{produto.quantidade}}</td>
+        <td>{{produto.valorVenda }}</td>
+        
+
+
+      </tr>
+    </table>
+
+
+
+
+    
+
+  </main><!--/.container-->
+
+  
+
+
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+      <script src="js/vendor/popper.min.js"></script>
+      
+      <script src="controller/carrinhoCtrl.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/offcanvas.js"></script>
+    </body>
+    </html>
